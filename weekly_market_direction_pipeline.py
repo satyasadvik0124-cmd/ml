@@ -80,7 +80,8 @@ def parse_args():
     parser.add_argument("--flat-threshold", type=float, default=0.005, help="Ignore weeks between +/- this return")
     parser.add_argument("--bearish-loss-threshold", type=float, default=-0.005, help="Regression trains on returns below this")
     parser.add_argument("--thresholds", default="0.55,0.60,0.65,0.70,0.75,0.80")
-    return parser.parse_args()
+    args, _unknown = parser.parse_known_args()
+    return args
 
 
 def load_dataset(project_path, index_name):
